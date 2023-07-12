@@ -45,8 +45,8 @@ const IndexPage = observer(() => {
           </button>
         </div>
 
-        {store.todos.map((todo) => (
-          <div className="flex flex-col m-2 p-2 bg-[#FFFDE7]">
+        {store.todos.map((todo, key) => (
+          <div className="flex flex-col m-2 p-2 bg-[#FFFDE7]" key={key}>
             <div className="flex flex-row gap-x-5">
               <input
                 type="checkbox"
