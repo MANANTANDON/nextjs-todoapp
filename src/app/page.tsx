@@ -10,9 +10,13 @@ const IndexPage = observer(() => {
   const store = useLocalObservable(() => TodoStore.create({ todos: [] }));
 
   const handleAddTodo = () => {
-    const newTodo = { id: Date.now().toString(), text: todo };
-    store.addTodo(newTodo);
-    setTodo("");
+    if (todo === "") {
+      alert("input something !");
+    } else {
+      const newTodo = { id: Date.now().toString(), text: todo };
+      store.addTodo(newTodo);
+      setTodo("");
+    }
   };
 
   const handleRemoveTodo = (todoId) => {
